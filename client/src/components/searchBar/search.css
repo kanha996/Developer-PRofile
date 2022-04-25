@@ -1,0 +1,33 @@
+.search-box{
+    position: absolute;
+    width: 821px;
+    height: 94px;
+    left: 237px;
+    top: 500px;
+    background: #D0CDE1;
+    border-radius: 15px;
+}
+
+.search-bar{
+    position: absolute;
+    width: 713px;
+    height: 59px;
+    left: 27px;
+    top: 15px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    outline: none;
+    font-size: 25px;
+    text-align: center;
+}
+
+.search-btn{
+    position: absolute;
+    /* font-size: 51px; */
+    left: 757px;
+    top: 22px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid #d0cde1;
+}
+
