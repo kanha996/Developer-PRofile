@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header/header';
-import Search from './components/searchBar/search';
+import MainPage from './main';
+
 
 function App() {
   return (
     <div className="App">
-
-      <Header/>
-      <Search/>
+      <MainPage/>
     </div>
   );
 }
