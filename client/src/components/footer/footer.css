@@ -1,8 +1,15 @@
 .footer-main {
-    height: 80px;
   background-color: #3f3d56;
   color: #fff;
   margin: 0;
   line-height: 80px;
   text-align: center;
+}
+
+#white-heart{
+  color:#fff;
+}
+
+.footer-info{
+  font-size: 28px;
 }

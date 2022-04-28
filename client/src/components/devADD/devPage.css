@@ -1,0 +1,31 @@
+.devAdd-txt{
+    text-align: center;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    color: #3F3D56;
+    margin: 25px auto;
+}
+
+.devAdd-btn{
+    text-align: center;
+}
+
+.add-btn{
+    width: 400px;
+    height: 65px;
+    background: #7C639F;
+    border-radius: 47px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}

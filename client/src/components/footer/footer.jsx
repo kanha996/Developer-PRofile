@@ -3,10 +3,10 @@ import "./footer.css";
 
 export default function Footer(){
     return(
-        <div className="footer-main">
+        <footer className="footer-main">
             <div className="footer-info">
-                <p> Made with 🥰 by Kanhaiya</p>
+                 Made with 🤍 by Kanhaiya
             </div>
-        </div>
+        </footer>
     );
 }
