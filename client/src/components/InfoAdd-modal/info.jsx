@@ -3,15 +3,21 @@ import Separator from "../separator-line/separator";
 import "./info.css";
 
 export default function InputModal({ closeModal }) {
+  const[githubID,setGithubId] = useState("");
+  const[codechefID,setCodechefId] = useState("");
+  const[linkedinID,setLinkedinId] = useState("");
+  const[hackerrankID,setHackerrankId] = useState("");
+  const[mediumID,setMediumId] = useState("");
+  const[twitterID,setTwitterId] = useState("");
 
-
+  // const submitHandler = 
 
   return (
     <div className="modal-body">
       <div className="modal-main">
         <div className="modal-header">Add Developer profile</div>
         <Separator />
-        <form>
+        <form >
           <div className="info-main">
             <div className="info-input">
               <div className="info-header">
@@ -20,7 +26,7 @@ export default function InputModal({ closeModal }) {
                   src={require("../assets/Profile Icons/iconfinder_github_317712.png")}
                   alt="img profile"
                 />
-                <p className="info-txt">GitHub</p>
+                <p className="info-txt">gitHub</p>
               </div>
               <input type="text"  className="input-txt" required/>
             </div>
@@ -56,7 +62,7 @@ export default function InputModal({ closeModal }) {
                   src={require("../assets/Profile Icons/hackerrank.png")}
                   alt="img profile"
                 />
-                <p className="info-txt">HackerRank</p>
+                <p className="info-txt">hackerRank</p>
               </div>
               <input type="text" className="input-txt" />
             </div>
@@ -68,7 +74,7 @@ export default function InputModal({ closeModal }) {
                   src={require("../assets/Profile Icons/medium.png")}
                   alt="img profile"
                 />
-                <p className="info-txt">Medium</p>
+                <p className="info-txt">medium</p>
               </div>
               <input type="text" className="input-txt" />
             </div>

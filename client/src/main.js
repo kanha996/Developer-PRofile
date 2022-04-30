@@ -6,12 +6,12 @@ import Separator from "./components/separator-line/separator";
 import Footer from "./components/footer/footer";
 import Users from "./components/users/user";
 import DevAdd from "./components/devADD/devPage";
-
+import Profile from "./components/profile/profile";
 
 function MainPage() {
   return (
     <>
-      <Header />
+      {/* <Header />
       
       <Title />
       <Separator/>
@@ -20,7 +20,9 @@ function MainPage() {
       <Users/>
       <Separator/>
       <DevAdd/>
-      <Footer />
+      <Footer /> */}
+      <Profile/>
+
     </>
   );
 }
