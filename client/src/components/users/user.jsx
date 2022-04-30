@@ -8,7 +8,7 @@ export default function Users(){
             <div className="user-wrapper">
                 <img src={require("../assets/Icons _ Illustrations/account_circle-24px.svg")} alt="user img" className="user-img"/>
                 <span className="user-id">Kanhaiya</span>
-                <a href="">
+                <a href="{}">
                 <img className="user-link" src={require("../assets/Icons _ Illustrations/north_east-24px.svg")} alt="link" />
                 </a>
                 
