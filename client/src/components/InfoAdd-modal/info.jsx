@@ -28,7 +28,7 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">gitHub</p>
               </div>
-              <input type="text"  className="input-txt" required/>
+              <input type="text"  className="input-txt" required onChange={(e)=>setGithubId(e.target.value)}/>
             </div>
 
             <div className="info-input">
@@ -40,7 +40,7 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">linkedin</p>
               </div>
-              <input type="text" className="input-txt" />
+              <input type="text" className="input-txt" onChange={(e)=>setLinkedinId(e.target.value)}/>
             </div>
 
             <div className="info-input">
@@ -52,7 +52,7 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">codechef</p>
               </div>
-              <input type="text" className="input-txt" />
+              <input type="text" className="input-txt" onChange={(e)=>setCodechefId(e.target.value)}/>
             </div>
 
             <div className="info-input">
@@ -64,7 +64,7 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">hackerRank</p>
               </div>
-              <input type="text" className="input-txt" />
+              <input type="text" className="input-txt" onChange={(e)=>setHackerrankId(e.target.value)}/>
             </div>
 
             <div className="info-input">
@@ -76,7 +76,7 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">medium</p>
               </div>
-              <input type="text" className="input-txt" />
+              <input type="text" className="input-txt" onChange={(e)=>setMediumId(e.target.value)}/>
             </div>
 
             <div className="info-input">
@@ -88,7 +88,7 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">twitter</p>
               </div>
-              <input type="text" className="input-txt" />
+              <input type="text" className="input-txt" onChange={(e)=>setTwitterId(e.target.value)}/>
             </div>
           </div>
 

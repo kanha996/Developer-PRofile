@@ -106,7 +106,7 @@ export default function Profile() {
           Github repositories
       </div>
       <Separator/>
-      <Footer/>
+      
     </div>
   );
 }
