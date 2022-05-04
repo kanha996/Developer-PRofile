@@ -2,8 +2,11 @@ import React from "react";
 import Footer from "../footer/footer";
 import Separator from "../separator-line/separator";
 import "./profile.css";
+import Repo from "../reposss/reposss";
 
 export default function Profile() {
+  
+
   return (
     <div className="profile-page">
       <div className="profile-header">
@@ -24,6 +27,7 @@ export default function Profile() {
               fill="#7C639F"
             />
           </svg>
+
         </div>
         <div className="profile-details">
           <div className="details-header">
@@ -105,6 +109,8 @@ export default function Profile() {
       <div className="profile-title">
           Github repositories
       </div>
+      
+      <Repo/>
       <Separator/>
       
     </div>

@@ -1,22 +1,30 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-  _id: String,
-  userID: { type: String, required: true },
-  avatar_url: String,
-  repo_url: String,
-  name: String,
-  company: String,
-  location: String,
-  blog: String,
-  bio: String,
-  email: String,
-  github_id: String,
-  linkedin_id: String,
-  codechef_id: String,
-  hackerrank_id: String,
-  medium_id: String,
-  twitter_id: String,
+  _id: { type: String },
+  userID: { type: String },
+  avatar_url: { type: String },
+  name: { type: String },
+  company: { type: String },
+  location: { type: String },
+  blog: { type: String },
+  bio: { type: String },
+  email: { type: String },
+  github_id: { type: String },
+  linkedin_id: { type: String },
+  codechef_id: { type: String },
+  hackerrank_id: { type: String },
+  medium_id: { type: String },
+  twitter_id: { type: String },
+  repos: [
+    {
+      _id: { type: String },
+      name: { type: String },
+      html_url: { type: String },
+      description: { type: String },
+      updated_at: { type: String },
+    },
+  ],
 });
 
 module.exports = mongoose.model("userInfo", userSchema);

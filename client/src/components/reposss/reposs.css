@@ -1,0 +1,49 @@
+.repo-wrapper{
+    margin: 15px 50px;
+}
+.repo-header {
+  display: flex;
+  gap: 20px;
+}
+
+.repo-name {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+
+  color: #0768fa;
+}
+
+.repo-link {
+  height: 45px;
+  width: 45px;
+  
+opacity: 0.4;
+}
+
+.update-detail {
+  display: flex;
+  align-items: flex-end;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #3f3d56;
+
+  opacity: 0.4;
+}
+
+.repo-desc{
+    font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+
+color: #3F3D56;
+
+}

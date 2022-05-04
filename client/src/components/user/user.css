@@ -1,0 +1,26 @@
+.user-main{
+    width: 200px;
+}
+
+.user-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+
+}
+
+.user-id{
+    font-size: 35px;
+    color: #9F8E63;
+}
+
+.user-link{
+    color: blue;
+    cursor: pointer;
+}

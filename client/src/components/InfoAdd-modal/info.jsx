@@ -1,23 +1,39 @@
 import React, { useState } from "react";
 import Separator from "../separator-line/separator";
 import "./info.css";
+const axios = require("axios");
 
 export default function InputModal({ closeModal }) {
-  const[githubID,setGithubId] = useState("");
-  const[codechefID,setCodechefId] = useState("");
-  const[linkedinID,setLinkedinId] = useState("");
-  const[hackerrankID,setHackerrankId] = useState("");
-  const[mediumID,setMediumId] = useState("");
-  const[twitterID,setTwitterId] = useState("");
+  const [githubID, setGithubId] = useState("");
+  const [codechefID, setCodechefId] = useState("");
+  const [linkedinID, setLinkedinId] = useState("");
+  const [hackerrankID, setHackerrankId] = useState("");
+  const [mediumID, setMediumId] = useState("");
+  const [twitterID, setTwitterId] = useState("");
 
-  // const submitHandler = 
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    // console.log("social");
+    await axios.post("http://localhost:5000/dev", {
+      githubID,
+      codechefID,
+      linkedinID,
+      hackerrankID,
+      mediumID,
+      twitterID,
+    }).then(()=>{
+      closeModal(false)
+    });
+
+    
+  };
 
   return (
     <div className="modal-body">
       <div className="modal-main">
         <div className="modal-header">Add Developer profile</div>
         <Separator />
-        <form >
+        <form onSubmit={submitHandler}>
           <div className="info-main">
             <div className="info-input">
               <div className="info-header">
@@ -28,7 +44,12 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">gitHub</p>
               </div>
-              <input type="text"  className="input-txt" required onChange={(e)=>setGithubId(e.target.value)}/>
+              <input
+                type="text"
+                className="input-txt"
+                required
+                onChange={(e) => setGithubId(e.target.value)}
+              />
             </div>
 
             <div className="info-input">
@@ -40,7 +61,11 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">linkedin</p>
               </div>
-              <input type="text" className="input-txt" onChange={(e)=>setLinkedinId(e.target.value)}/>
+              <input
+                type="text"
+                className="input-txt"
+                onChange={(e) => setLinkedinId(e.target.value)}
+              />
             </div>
 
             <div className="info-input">
@@ -52,7 +77,11 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">codechef</p>
               </div>
-              <input type="text" className="input-txt" onChange={(e)=>setCodechefId(e.target.value)}/>
+              <input
+                type="text"
+                className="input-txt"
+                onChange={(e) => setCodechefId(e.target.value)}
+              />
             </div>
 
             <div className="info-input">
@@ -64,7 +93,11 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">hackerRank</p>
               </div>
-              <input type="text" className="input-txt" onChange={(e)=>setHackerrankId(e.target.value)}/>
+              <input
+                type="text"
+                className="input-txt"
+                onChange={(e) => setHackerrankId(e.target.value)}
+              />
             </div>
 
             <div className="info-input">
@@ -76,7 +109,11 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">medium</p>
               </div>
-              <input type="text" className="input-txt" onChange={(e)=>setMediumId(e.target.value)}/>
+              <input
+                type="text"
+                className="input-txt"
+                onChange={(e) => setMediumId(e.target.value)}
+              />
             </div>
 
             <div className="info-input">
@@ -88,7 +125,11 @@ export default function InputModal({ closeModal }) {
                 />
                 <p className="info-txt">twitter</p>
               </div>
-              <input type="text" className="input-txt" onChange={(e)=>setTwitterId(e.target.value)}/>
+              <input
+                type="text"
+                className="input-txt"
+                onChange={(e) => setTwitterId(e.target.value)}
+              />
             </div>
           </div>
 
@@ -101,7 +142,7 @@ export default function InputModal({ closeModal }) {
               >
                 cancel
               </button>
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="submit-btn" >
                 submit
               </button>
             </div>

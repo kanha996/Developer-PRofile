@@ -3,9 +3,9 @@ const { default: mongoose } = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
-const api = require("./routes/api")
+const dev = require("./routes/dev")
 require('dotenv').config();
-
+app.use(express.json());
 app.use(cors());
 
 mongoose
@@ -20,9 +20,9 @@ mongoose
     console.log("Error connecting to MongoDB");
   });
 
-app.use(express.json());
 
-app.use("")
+
+app.use("/dev",dev);
 
 app.listen(PORT, () => {
   console.log(`Listening to the ${PORT}`);
