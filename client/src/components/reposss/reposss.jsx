@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./reposs.css";
 import Separator from "../separator-line/separator";
 import reposvg from "../assets/Icons _ Illustrations/north_east-24px.svg";
-import { Link } from "react-router-dom";
+
 
 
 export default function Repo(props) {

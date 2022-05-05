@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./user.css";
 import arrowsvg from "../assets/Icons _ Illustrations/north_east-24px.svg"
 import { Link } from "react-router-dom";
