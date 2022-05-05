@@ -14,7 +14,7 @@ export default function InputModal({ closeModal }) {
   const submitHandler = async (e) => {
     e.preventDefault();
     // console.log("social");
-    await axios.post("http://localhost:5000/dev", {
+    await axios.post("https://devpro-io.herokuapp.com/dev", {
       githubID,
       codechefID,
       linkedinID,

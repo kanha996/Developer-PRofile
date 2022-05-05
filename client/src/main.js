@@ -6,7 +6,6 @@ import Footer from "./components/footer/footer";
 import Users from "./components/users/users";
 import DevAdd from "./components/devADD/devPage";
 import axios from 'axios';
-import Errorpage from "./components/errorPage/errorpage";
 
 function MainPage() {
   const [list, setList] = useState([]);

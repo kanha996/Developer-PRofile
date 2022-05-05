@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/dev/:userName" element={<Profile />} />
-        <Route path="*" element={<Errorpage/>} />
+        <Route path="/*" element={<Errorpage/>} />
       </Routes>
     </Router>
   );

@@ -18,7 +18,7 @@ export default function Profile() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/dev/${userName}`)
+      .get(`https://devpro-io.herokuapp.com/dev/${userName}`)
       .then((Response) => {
         setData(Response.data);
       })
@@ -28,7 +28,7 @@ export default function Profile() {
   }, [userName]);
 
   const deleteHandler = () =>{
-    axios.delete(`http://localhost:5000/dev/${userName}`)
+    axios.delete(`https://devpro-io.herokuapp.com/dev/${userName}`)
   }
 
   // const[repoList,setRepoList] = useState([])
