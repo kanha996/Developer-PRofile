@@ -27,6 +27,10 @@ export default function Profile() {
       });
   }, [userName]);
 
+  const deleteHandler = () =>{
+    axios.delete(`http://localhost:5000/dev/${userName}`)
+  }
+
   // const[repoList,setRepoList] = useState([])
   if (loading) {
     const { repos } = data;
@@ -132,6 +136,11 @@ export default function Profile() {
               <span className="misc-span">{data.company}</span>
               <img className="misc-img" src={emailsvg} alt="" />
               <span className="misc-span">{data.blog}</span>
+            </div>
+            <div className="delete-wrapper">
+              <Link to="/">
+              <button type="submit" className="delete-btn" onClick={deleteHandler}>delete profile</button>
+              </Link>
             </div>
           </div>
         </div>
