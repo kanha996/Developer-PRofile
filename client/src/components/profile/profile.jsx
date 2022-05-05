@@ -1,118 +1,155 @@
-import React from "react";
+/* eslint-disable array-callback-return */
+import React, { useState, useEffect } from "react";
 import Footer from "../footer/footer";
 import Separator from "../separator-line/separator";
 import "./profile.css";
 import Repo from "../reposss/reposss";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
+import locationsvg from "../assets/Icons _ Illustrations/location_on-24px.svg";
+import companysvg from "../assets/Icons _ Illustrations/business-24px.svg";
+import emailsvg from "../assets/Icons _ Illustrations/insert_link-24px (1).svg";
 
 export default function Profile() {
-  
+  let { userName } = useParams();
 
-  return (
-    <div className="profile-page">
-      <div className="profile-header">
-        <p className="profile-header-txt"> The Developer Profile</p>
-        <p className="profile-header-txt"> All Developers</p>
-      </div>
-      <div className="profile-body">
-        <div className="profile-img">
-          <svg
-            width="334"
-            height="334"
-            viewBox="0 0 334 334"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M166.994 0.333252C74.9938 0.333252 0.327148 74.9999 0.327148 167C0.327148 259 74.9938 333.667 166.994 333.667C258.994 333.667 333.661 259 333.661 167C333.661 74.9999 258.994 0.333252 166.994 0.333252ZM166.994 50.3333C194.66 50.3333 216.994 72.6666 216.994 100.333C216.994 128 194.66 150.333 166.994 150.333C139.327 150.333 116.994 128 116.994 100.333C116.994 72.6666 139.327 50.3333 166.994 50.3333ZM166.994 287C125.327 287 88.4938 265.667 66.9938 233.333C67.4938 200.167 133.66 182 166.994 182C200.16 182 266.494 200.167 266.994 233.333C245.494 265.667 208.66 287 166.994 287Z"
-              fill="#7C639F"
-            />
-          </svg>
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/dev/${userName}`)
+      .then((Response) => {
+        setData(Response.data);
+      })
+      .then(() => {
+        setLoading(true);
+      });
+  }, [userName]);
+
+  // const[repoList,setRepoList] = useState([])
+  if (loading) {
+    const { repos } = data;
+    return (
+      <div className="profile-page">
+        <div className="profile-header">
+          <p className="profile-header-txt"> The Developer Profile</p>
+          <Link to="/" className="all-dev-link">
+            <p className="profile-header-txt"> All Developers</p>
+          </Link>
         </div>
-        <div className="profile-details">
-          <div className="details-header">
-            <h1 className="detail-header-txt">Kanhaiya Mishra</h1>
+        <div className="profile-body">
+          <div className="profile-img">
+            <img src={data.avatar_url} className="profile-img-wrapper" alt="" />
           </div>
-          <div className="profile-bio">
-            <p className="bio-txt">CIS @Capgemini</p>
-          </div>
-          <div className="profile-socials">
-            <a href="">
-              <img
-                className="profile-social-img"
-                src={require("../assets/Profile Icons/iconfinder_github_317712.png")}
-                alt="img profile"
-              />
-            </a>
-            <a href="">
-              <img
-                className="profile-social-img"
-                src={require("../assets/Profile Icons/hackerrank.png")}
-                alt="img profile"
-              />
-            </a>
-            <a href="">
-              <img
-                className="profile-social-img"
-                src={require("../assets/Profile Icons/codechef.png")}
-                alt="img profile"
-              />
-            </a>
-            <a href="">
-              <img
-                className="profile-social-img"
-                src={require("../assets/Profile Icons/linkedin.png")}
-                alt="img profile"
-              />
-            </a>
-            <a href="">
-              <img
-                className="profile-social-img"
-                src={require("../assets/Profile Icons/medium.png")}
-                alt="img profile"
-              />
-            </a>
-            <a href="">
-              <img
-                className="profile-social-img"
-                src={require("../assets/Profile Icons/twitter.png")}
-                alt="img profile"
-              />
-            </a>
-            <a href="">
-              <img
-                className="profile-social-img"
-                src={require("../assets/Icons _ Illustrations/Vector (1).png")}
-                alt="img profile"
-              />
-            </a>
-          </div>
-          <div className="misc-detail">
-            <img
-              className="misc-img"
-              src={require("../assets/Icons _ Illustrations/location_on-24px.svg")}
-            />
-            <span className="misc-span">Bokaro</span>
-            <img
-              className="misc-img"
-              src={require("../assets/Icons _ Illustrations/business-24px.svg")}
-            />
-            <span className="misc-span">Bokaro</span>
-            <img
-              className="misc-img"
-              src={require("../assets/Icons _ Illustrations/insert_link-24px (1).svg")}
-            />
-            <span className="misc-span">Bokaro</span>
+          <div className="profile-details">
+            <div className="details-header">
+              <h1 className="detail-header-txt">{data.name}</h1>
+            </div>
+            <div className="profile-bio">
+              <p className="bio-txt">{data.bio}</p>
+            </div>
+            <div className="profile-socials">
+              <a
+                href={`http://github.com/${data.github}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="profile-social-img"
+                  src={require("../assets/Profile Icons/iconfinder_github_317712.png")}
+                  alt="img profile"
+                />
+              </a>
+              <a
+                href={`http://hackerrank.com/${data.hackerrank}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="profile-social-img"
+                  src={require("../assets/Profile Icons/hackerrank.png")}
+                  alt="img profile"
+                />
+              </a>
+              <a
+                href={`http://codechef.com/${data.codechef}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="profile-social-img"
+                  src={require("../assets/Profile Icons/codechef.png")}
+                  alt="img profile"
+                />
+              </a>
+              <a
+                href={`http://linkedin.com/in/${data.linkedin}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="profile-social-img"
+                  src={require("../assets/Profile Icons/linkedin.png")}
+                  alt="img profile"
+                />
+              </a>
+              <a
+                href={`http://medium.com/${data.medium}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="profile-social-img"
+                  src={require("../assets/Profile Icons/medium.png")}
+                  alt="img profile"
+                />
+              </a>
+
+              <a
+                href={`http://twitter.com/${data.twitter}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="profile-social-img"
+                  src={require("../assets/Profile Icons/twitter.png")}
+                  alt="img profile"
+                />
+              </a>
+              <a href={`mailto${data.email}`} target="_blank" rel="noreferrer">
+                <img
+                  className="profile-social-img"
+                  src={require("../assets/Icons _ Illustrations/Vector (1).png")}
+                  alt="img profile"
+                />
+              </a>
+            </div>
+            <div className="misc-detail">
+              <img className="misc-img" src={locationsvg} alt="" />
+              <span className="misc-span">{data.location}</span>
+              <img className="misc-img" src={companysvg} alt="" />
+              <span className="misc-span">{data.company}</span>
+              <img className="misc-img" src={emailsvg} alt="" />
+              <span className="misc-span">{data.blog}</span>
+            </div>
           </div>
         </div>
+        <div className="profile-title">Github repositories</div>
+        {repos.map((p) => {
+          return (
+            <Repo
+              key={p.name}
+              header={p.name}
+              repo_url={p.html_url}
+              date={new Date(p.updated_at).toDateString()}
+              desc={p.description}
+            />
+          );
+        })}
+        <Separator />
+        <Footer />
       </div>
-      <div className="profile-title">
-          Github repositories
-      </div>
-      
-      <Repo/>
-      <Separator/>
-      
-    </div>
-  );
+    );
+  }
 }

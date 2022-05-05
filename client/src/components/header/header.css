@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
 .main {
     
-  min-height: 380px;
+  min-height: 320px;
   width: 100%;
   background-color: rgb(47, 46, 65);
   margin: 0;
@@ -22,8 +22,8 @@
 
 .main-logo {
   position: absolute;
-  width: 605px;
-  height: 360px;
+  width: 465px;
+  height: 300px;
   left: 764px;
   top: 10px;
 }

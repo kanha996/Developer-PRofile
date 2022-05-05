@@ -1,0 +1,13 @@
+.error-msg{
+    display: flex;
+    justify-content: center;
+}
+
+.error-txt{
+
+    font-size: 70px;
+}
+
+.crying-img{
+    width: 70px;
+}

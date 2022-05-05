@@ -27,6 +27,11 @@
     margin-left: 90px;
 }
 
+.profile-img-wrapper{
+    border-radius: 50%;
+    width: 300px;
+}
+
 .detail-header-txt{
     font-family: 'Nunito Sans';
 font-style: normal;
@@ -74,4 +79,8 @@ color: #3F3D56;
     line-height: 76px;
     color: #3F3D56;
     margin: 14px auto;
+}
+
+.all-dev-link{
+    text-decoration: none;
 }

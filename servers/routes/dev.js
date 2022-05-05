@@ -61,15 +61,13 @@ router.post("/", (req, res) => {
 
 //
 
-
-
 //get user info
 router.get("/:id", async (req, res) => {
   try {
-    const u = await UserDB.findById(req.params.id);
-    res.status(200).json(u);
+    const response = await UserDB.findById(req.params.id);
+    res.status(200).json(response);
   } catch (err) {
-    res.send(500).json(err);
+    res.status(500).json(err);
   }
 });
 
