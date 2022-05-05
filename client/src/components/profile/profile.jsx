@@ -55,7 +55,7 @@ export default function Profile() {
             </div>
             <div className="profile-socials">
               <a
-                href={`http://github.com/${data.github}`}
+                href={`http://github.com/${userName}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -66,7 +66,7 @@ export default function Profile() {
                 />
               </a>
               <a
-                href={`http://hackerrank.com/${data.hackerrank}`}
+                href={`http://hackerrank.com/${data.hackerrank_id}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -77,7 +77,7 @@ export default function Profile() {
                 />
               </a>
               <a
-                href={`http://codechef.com/${data.codechef}`}
+                href={`http://codechef.com/${data.codechef_id}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -88,7 +88,7 @@ export default function Profile() {
                 />
               </a>
               <a
-                href={`http://linkedin.com/in/${data.linkedin}`}
+                href={`http://linkedin.com/in/${data.linkedin_id}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -99,7 +99,7 @@ export default function Profile() {
                 />
               </a>
               <a
-                href={`http://medium.com/${data.medium}`}
+                href={`http://medium.com/${data.medium_id}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -111,7 +111,7 @@ export default function Profile() {
               </a>
 
               <a
-                href={`http://twitter.com/${data.twitter}`}
+                href={`http://twitter.com/${data.twitter_id}`}
                 target="_blank"
                 rel="noreferrer"
               >
