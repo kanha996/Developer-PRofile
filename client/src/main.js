@@ -11,7 +11,7 @@ function MainPage() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/dev/").then((Response) => {
+    axios.get("https://developer-profileapi.onrender.com/dev/").then((Response) => {
       setList(Response.data);
     });
   }, [list]);
