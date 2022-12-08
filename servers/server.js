@@ -10,7 +10,7 @@ app.use(cors());
 
 mongoose
   .connect(
-    "mongodb+srv://admin:admin123@cluster0.uaqq7.mongodb.net/devDB?retryWrites=true&w=majority",
+    "mongodb+srv://admin:admin1234@cluster0.uaqq7.mongodb.net/devDB?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
