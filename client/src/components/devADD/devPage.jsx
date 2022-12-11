@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./devPage.css";
 import InputModal from "../InfoAdd-modal/info";
 
-export default function DevAdd() {
+export default function DevAdd({ isAdded , setIsAdded}) {
   const [modal, setModal] = useState(false);
   return (
     <>
@@ -20,7 +20,7 @@ export default function DevAdd() {
           </button>
         </div>
       </div>
-      {modal && <InputModal closeModal={setModal} />}
+      {modal && <InputModal closeModal={setModal} isAdded={isAdded} setIsAdded={setIsAdded}/>}
     </>
   );
 }

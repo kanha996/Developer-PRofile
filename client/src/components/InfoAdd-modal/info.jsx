@@ -3,7 +3,7 @@ import Separator from "../separator-line/separator";
 import "./info.css";
 const axios = require("axios");
 
-export default function InputModal({ closeModal }) {
+export default function InputModal({ closeModal, isAdded, setIsAdded }) {
   const [githubID, setGithubId] = useState("");
   const [codechefID, setCodechefId] = useState("");
   const [linkedinID, setLinkedinId] = useState("");
@@ -13,19 +13,19 @@ export default function InputModal({ closeModal }) {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    // console.log("social");
-    await axios.post("https://devpro-io.herokuapp.com/dev", {
-      githubID,
-      codechefID,
-      linkedinID,
-      hackerrankID,
-      mediumID,
-      twitterID,
-    }).then(()=>{
-      closeModal(false)
-    });
-
-    
+    await axios
+      .post("https://developer-profileapi.onrender.com/dev/", {
+        githubID,
+        codechefID,
+        linkedinID,
+        hackerrankID,
+        mediumID,
+        twitterID,
+      })
+      .then(() => {
+        closeModal(false);
+      });
+    setIsAdded(true);
   };
 
   return (
@@ -142,7 +142,7 @@ export default function InputModal({ closeModal }) {
               >
                 cancel
               </button>
-              <button type="submit" className="submit-btn" >
+              <button type="submit" className="submit-btn">
                 submit
               </button>
             </div>
