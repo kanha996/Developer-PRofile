@@ -1,35 +1,43 @@
 /* eslint-disable array-callback-return */
-import React, { useState, useEffect } from "react";
-import Footer from "../footer/footer";
-import Separator from "../separator-line/separator";
-import "./profile.css";
-import Repo from "../reposss/reposss";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
-import locationsvg from "../assets/Icons _ Illustrations/location_on-24px.svg";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import companysvg from "../assets/Icons _ Illustrations/business-24px.svg";
 import emailsvg from "../assets/Icons _ Illustrations/insert_link-24px (1).svg";
+import locationsvg from "../assets/Icons _ Illustrations/location_on-24px.svg";
+import Footer from "../footer/footer";
+import Repo from "../reposss/reposss";
+import Separator from "../separator-line/separator";
+import "./profile.css";
 
 export default function Profile() {
-  let { userName } = useParams();
-
+  const { userName } = useParams();
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(`https://devpro-io.herokuapp.com/dev/${userName}`)
-      .then((Response) => {
-        setData(Response.data);
-      })
-      .then(() => {
+    (async () => {
+      try {
+        const res = await axios.get(`https://developer-profileapi.onrender.com/dev/${userName}`);
+        setData(res.data);
         setLoading(true);
-      });
+      } catch (error) {
+        alert(error);
+      }
+    })();
   }, [userName]);
 
-  const deleteHandler = () =>{
-    axios.delete(`https://devpro-io.herokuapp.com/dev/${userName}`)
-  }
+  
+
+  const deleteHandler = async () => {
+    try {
+      await axios.delete(`https://developer-profileapi.onrender.com/dev/${userName}`);
+      navigate('/');
+    } catch (error) {
+      window.alert(error);
+    }
+  };
 
   // const[repoList,setRepoList] = useState([])
   if (loading) {
@@ -138,9 +146,13 @@ export default function Profile() {
               <span className="misc-span">{data.blog}</span>
             </div>
             <div className="delete-wrapper">
-              <Link to="/">
-              <button type="submit" className="delete-btn" onClick={deleteHandler}>delete profile</button>
-              </Link>
+                <button
+                  type="submit"
+                  className="delete-btn"
+                  onClick={deleteHandler}
+                >
+                  delete profile
+                </button>
             </div>
           </div>
         </div>
