@@ -14,7 +14,7 @@ export default function InputModal({ closeModal, isAdded, setIsAdded }) {
   const submitHandler = async (e) => {
     e.preventDefault();
     await axios
-      .post("https://developer-profileapi.onrender.com/dev/", {
+      .post("https://developer-profileapi.onrender.com/dev/postInfo", {
         githubID,
         codechefID,
         linkedinID,

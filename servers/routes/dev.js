@@ -6,7 +6,7 @@ const axios = require("axios");
 const UserDB = require("../DB/UserInfo");
 
 // post social
-router.post("/", (req, res) => {
+router.post("/postInfo", (req, res) => {
   github = req.body.githubID;
   (linkedin = req.body.linkedinID),
     (codechef = req.body.codechefID),
@@ -83,7 +83,7 @@ router.delete("/:id", async (req, res) => {
 });
 
 //all developers
-router.get("/all", async (req, res) => {
+router.get("/", async (req, res) => {
   const allDev = [];
 
   try {

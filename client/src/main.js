@@ -15,7 +15,7 @@ function MainPage() {
     (async () => {
       try {
         const res = await axios.get(
-          `https://developer-profileapi.onrender.com/dev/all`
+          `https://developer-profileapi.onrender.com/dev/`
         );
         setList(res.data);
       } catch (error) {
