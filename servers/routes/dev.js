@@ -83,7 +83,7 @@ router.delete("/:id", async (req, res) => {
 });
 
 //all developers
-router.get("/", async (req, res) => {
+router.get("/all", async (req, res) => {
   const allDev = [];
 
   try {

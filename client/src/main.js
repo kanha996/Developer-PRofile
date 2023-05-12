@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import Header from "./components/header/header";
-import Title from "./components/titleTxt/title";
-import Separator from "./components/separator-line/separator";
-import Footer from "./components/footer/footer";
-import Users from "./components/users/users";
-import DevAdd from "./components/devADD/devPage";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import DevAdd from "./components/devADD/devPage";
+import Footer from "./components/footer/footer";
+import Header from "./components/header/header";
+import Separator from "./components/separator-line/separator";
+import Title from "./components/titleTxt/title";
+import Users from "./components/users/users";
 
 function MainPage() {
   const [list, setList] = useState([]);
@@ -14,7 +14,9 @@ function MainPage() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get(`https://developer-profileapi.onrender.com/dev/`);
+        const res = await axios.get(
+          `https://developer-profileapi.onrender.com/dev/all`
+        );
         setList(res.data);
       } catch (error) {
         alert(error);
